@@ -1,3 +1,24 @@
-NAME     READY   STATUS    RESTARTS   AGE
-nginx1   1/1     Running   0          3m38s
-nginx2   1/1     Running   0          3m20s
+NAMESPACE   NAME                      READY   STATUS    RESTARTS   AGE
+s-23        nginx1                    1/1     Running   0          99m
+s-23        nginx2                    1/1     Running   0          98m
+s-24        nginx1                    1/1     Running   0          88m
+s-24        nginx2                    1/1     Running   0          88m
+s-27        nginx1                    1/1     Running   0          76m
+s-29        nginx1-548b49765c-8tt9h   1/1     Running   0          64m
+s-29        nginx2-5d4bdfc578-9fcfn   1/1     Running   0          63m
+s-30        nginx1                    1/1     Running   0          64m
+s-30        nginx2                    1/1     Running   0          64m
+s-34        nginx1                    1/1     Running   0          92m
+s-34        nginx2                    1/1     Running   0          92m
+s-35        nginx1                    1/1     Running   0          67m
+s-37        nginx1                    1/1     Running   0          60m
+s-37        nginx2                    1/1     Running   0          60m
+s-38        nginx1                    1/1     Running   0          82m
+s-38        nginx2                    1/1     Running   0          82m
+s-40        nginx1                    1/1     Running   0          101m
+s-40        nginx2                    1/1     Running   0          100m
+s-44        nginx1                    1/1     Running   0          68m
+s-46        nginx1                    1/1     Running   0          101m
+s-46        nginx2                    1/1     Running   0          101m
+s-49        nginx1                    1/1     Running   0          90m
+s-49        nginx2                    1/1     Running   0          89m
