@@ -1,0 +1,1 @@
+asrorbekm/flask-app:v1

@@ -1,0 +1,2 @@
+kubectl expose deployment flask-app-practice --type ClusterIP --port 80 --target-port 5000
+kubectl exec nginx1 -- curl http://flask-app-practice:80/practice

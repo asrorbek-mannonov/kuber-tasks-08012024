@@ -1,0 +1,1 @@
+kubectl run nginx1 -n s-46 --image nginx -l project=practice,author=asrorbek

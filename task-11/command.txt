@@ -1,0 +1,1 @@
+kubectl expose deployment flask-app-practice --type NodePort --port 80 --target-port 5000

@@ -1,0 +1,1 @@
+curl 135.181.204.192:31395/check-ingress

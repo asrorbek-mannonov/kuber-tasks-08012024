@@ -1,0 +1,99 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2024-01-08T14:45:25Z"
+  labels:
+    author: asrorbek
+    project: practice
+  name: nginx1
+  namespace: s-46
+  resourceVersion: "4023362"
+  uid: 44cdc38e-64a6-4130-922a-2000bac28c1a
+spec:
+  containers:
+  - image: nginx
+    imagePullPolicy: Always
+    name: nginx1
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-cc9fj
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: node3
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: kube-api-access-cc9fj
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2024-01-08T14:45:25Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2024-01-08T14:45:27Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2024-01-08T14:45:27Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2024-01-08T14:45:25Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: containerd://60e9af7926095f4c84724e7fd05150e18003e8e0ca5c01fa70f9bc7d267b8aa0
+    image: docker.io/library/nginx:latest
+    imageID: docker.io/library/nginx@sha256:2bdc49f2f8ae8d8dc50ed00f2ee56d00385c6f8bc8a8b320d0a294d9e3b49026
+    lastState: {}
+    name: nginx1
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2024-01-08T14:45:27Z"
+  hostIP: 65.109.14.160
+  phase: Running
+  podIP: 10.233.68.153
+  podIPs:
+  - ip: 10.233.68.153
+  qosClass: BestEffort
+  startTime: "2024-01-08T14:45:25Z"
